@@ -14,19 +14,19 @@ import fitz
 FILETYPE=".pdf"
 def düzenle(url):
   return bs(requests.get(url).text, "html.parser")
-def bölme_1(data):
+def bölme_2(data):
   url=data
   liste_url=[]
   for link in düzenle(url).find_all('a'):
     file_link = link.get('href')
     if FILETYPE in file_link:
       liste_url.append(file_link)
-      liste_url_1=liste_url[int(len(liste_url)/5):2*int(len(liste_url)/5)]
-  return liste_url_1
+      liste_url_2=liste_url[int(len(liste_url)/5):2*int(len(liste_url)/5)]
+  return liste_url_2
   ***************
-def arama_1(kişi,data):
+def arama_2(kişi,data):
   liste=[]
-  for link in bölme_1(data):
+  for link in bölme_2(data):
     response=requests.get(link)
     try:
       with io.BytesIO(response.content) as open_pdf_file:
@@ -44,9 +44,9 @@ def arama_1(kişi,data):
       print("gazete yok")
   return(liste)
   ***************
-  def arama_1_çoklu(kişi,kişi_1,data):
+  def arama_2_çoklu(kişi,kişi_2,data):
   liste=[]
-  for link in bölme_1(data):
+  for link in bölme_2(data):
     response=requests.get(link)
     try:
       with io.BytesIO(response.content) as open_pdf_file:
@@ -65,13 +65,13 @@ def arama_1(kişi,data):
       print("gazete yok")
   return(liste)
   ***************
-bölme_1("http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
-arama_1("cahit arf","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
-bölme_1("http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
-arama_1("mustafa inan","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
-arama_1("ratip berker","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
-arama_1("ratıb berker","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
-arama_1("kerim erim","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+bölme_2("http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+arama_2("cahit arf","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+bölme_2("http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+arama_2("mustafa inan","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+arama_2("ratip berker","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+arama_2("ratıb berker","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
+arama_2("kerim erim","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gazete=vatan")
   ***************
   def flags_decomposer(flags):
     l = []
@@ -137,5 +137,5 @@ arama_1("kerim erim","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gaz
   except:
     print("isim bulunmadı")
    ***************
-   text_extraction('vatan_1940_biricikanun_9_.pdf',"cahit ","arf ", 1)
+   text_extraction('ulus_1937_nisan_ 19.pdf',"kerim ","erim ", 2)
 © 2022 
