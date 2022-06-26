@@ -94,12 +94,12 @@ arama_4("kerim erim","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gaz
  def page_information(name,sayfa):
   doc = fitz.open(name)
   page = doc[sayfa]
-  # read page text as a dictionary, suppressing extra spaces in CJK fonts
+  
   blocks = page.get_text("dict", flags=11)["blocks"]
   a=[]
-  for b in blocks: # iterate through the text blocks
-    for l in b["lines"]: # iterate through the text lines
-        for s in l["spans"]: # iterate through the text spans
+  for b in blocks:
+    for l in b["lines"]:
+        for s in l["spans"]:
             print("")
             font_properties = "Font: '%s' (%s), size %g, color #%06x" % (
             s["font"], # font name
