@@ -137,4 +137,3 @@ arama_1("kerim erim","http://nek.istanbul.edu.tr:4444/ekos/GAZETE/gazete.php?gaz
   except:
     print("isim bulunmadı")
    ***************
-   text_extraction('vatan_1940_biricikanun_9_.pdf',"cahit ","arf ", 1)
